@@ -1,0 +1,48 @@
+=head1 Deterministic Growths Patch for FE Fates (rev. 4)
+
+This patch removes randomness from player unit level-up stat changes.
+
+The stats gained at each level are computed so that units' total gains in each
+stat differ from averages by less than one point.
+
+=head2 Caveats and Technical Details
+
+Stat gains can additionally vary by up to one point per class change.
+
+At some point beyond level 99, all your levels probably wind up being the same
+and you'll need to change classes to get different ones. I haven't tested it,
+but also I don't think it can conceivably matter.
+
+The level-up calculation is memoryless and based only on current growth rates
+and level + internal level. It does not keep track of previous classes, and
+cannot distinguish between odd and even promotion level.
+
+Stat increases are computed by taking C<growth rate*adjusted level/100> for the
+current and previous level and subtracting their respective integer parts,
+where C<growth rate> is usual growth rate modified by class and boon/bane, and
+C<adjusted level> is C<displayed level + internal level - 7 + stat index>, i.e.
+-7 HP, -6 Str, &c., -0 Res.
+
+Internally, the calculation is done as multiply-by-shift with epicycles. The
+result should be errorless up to 24 bits, and you probably wouldn't notice the
+small errors that occur beyond 10~12 bit without the epicycles, but please
+report any discrepancies you find.
+
+=head2 Building
+
+The patch is provided pre-built for JPN and USA Special Editions. If you have
+another edition (or if you want to modify the patch in assembly), you'll need
+to build it from source, requiring:
+
+=over 2
+
+=item * armips
+
+=item * A dump of code.bin from your game's exefs
+
+=item * Debug symbols from debug/addr.StackTrace and debug/name.StackTrace in your game's romfs
+
+=back
+
+A Lua script F<armips_symbols.lua> is provided to automatically generate the
+file F<autosym.s> in a format suitable for armips to read.
