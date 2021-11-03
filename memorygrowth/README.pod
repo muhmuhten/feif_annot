@@ -45,5 +45,9 @@ As far as I can tell, yes.
 The patch is pre-built for JPN and USA Special Editions, and for USA Conquest.
 See L<Moonling's guide|https://gamebanana.com/tuts/13215> for more detail.
 
+The only file that needs to be installed is the F<code.ips> file corresponding
+to your version of the game; you can probably just copy the appropriate titleid
+folders (or just all of them) into F</luma/titles/> or equivalent.
+
 At this time, I am not in a position to service tech support requests except in
 the form of $100/hr commissions or offers of full-time employment.
