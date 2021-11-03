@@ -1,0 +1,47 @@
+=head1 0% Growths Patch for FE Fates
+
+This patch also removes randomness from player unit level-up stat changes, by
+removing level-up stat changes altogether.
+
+=head2 Caveats and Technical Details
+
+We patch out a branch in the level-up stat gain routine to always behave as if
+we failed the growth roll. There are other places we could patch to roughly the
+same effect, but this one is maximally patch-golfed.
+
+Since this patch only modifies the random level-up code, and doesn't need to
+touch growth rate data, B<non-random autolevels behave as in vanilla>. This
+includes the stats child units and late castle joins get, which are based on
+computed average growths.
+
+=head3 Why would you want this?
+
+Masochism, and/or proving that the game is still technically playable even if
+you get maximally unlucky. You can't actually get this unlucky, by the way;
+there's only a 128-bit per-unit level-up RNG state, it doesn't even get reset
+for loads on Lunatic, and the game rolls up to 4x to avoid empty levels, so it
+isn't very likely that there's any possible RN string that actually gives any
+particular unit 8 empty levels in a row.
+
+=head3 Doesn't this already exist?
+
+Previous 0% growths hacks that I know of work by setting all growth rates to 0.
+This does indeed prevent normal gen 1 characters from gaining stats on level,
+but notably leaves child units with no autolevel stats, which is wrong and a
+huge deal because late-recruit child units get a lot of stats from autolevels.
+
+=head3 Is this compatible with Gay Fates?
+
+As far as I can tell, yes.
+
+=head2 Installation
+
+The patch is pre-built for JPN and USA Special Editions, and for USA Conquest.
+See L<Moonling's guide|https://gamebanana.com/tuts/13215> for more detail.
+
+The only file that needs to be installed is the F<code.ips> file corresponding
+to your version of the game; you can probably just copy the appropriate titleid
+folders (or just all of them) into F</luma/titles/> or equivalent.
+
+At this time, I am not in a position to service tech support requests except in
+the form of $100/hr commissions or offers of full-time employment.
