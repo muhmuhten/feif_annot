@@ -1,0 +1,49 @@
+=head1 Deterministic Growths Patch for FE Fates (take 9)
+
+This patch removes randomness from player unit level-up stat changes.
+
+The stats are gained at least level by accumulating growth rates across prior
+levels and rounding, I<with memory> of growths prior in prior classes.
+
+This is a substantial departure from my previous deterministic growths patch's
+methodology, probably generally easier for people to reason about, but also
+with new and fascinating bugs and limitations.
+
+=head2 Caveats and Technical Details
+
+This patch hijacks the PvP stat handicap fields to store a running total of
+unrealized growths. The handicap PvP mode will read these values as something
+wild and probably straight up zero half of a units stats.
+
+When a unit levels up, we add that unit's computed growth in each stat to the
+running total, then bump the stat up by 1 (and reduce the running total by 100)
+until the running total is less than 50. This leaves the running total in the
+range -50..49 at rest (read as 206..255,0..49 by the handicap code), and should
+be equivalent to conventional closest-integer half-up rounding.
+
+Unlike standard Fates, which rolls levels up to 4 times to avoid empty levels,
+this code has no such bad "luck" mitigation, which probably justifies rounding.
+Gunter levels are a bit worse, sure, but somehow I doubt that's a dealbreaker.
+
+=head3 Why would you want this?
+
+If you read between the lines, this is what people call "average stats", which
+people like to bandy about, so now you can actually play with average stats and
+complain about how speed-screwed your almost exactly average Silas is.
+
+I write a lot of these little mechanical patches, not all of which are even
+good ideas (e.g. L<SoV negative growths|https://gamebanana.com/mods/54580>, or
+Fates 2RN Hit). Most of them have never been widely published, but you can find
+a few of the more I<interesting> ones in this repo.
+
+=head3 Is this compatible with Gay Fates?
+
+As far as I can tell, yes.
+
+=head2 Installation
+
+The patch is pre-built for JPN and USA Special Editions, and for USA Conquest.
+See L<Moonling's guide|https://gamebanana.com/tuts/13215> for more detail.
+
+At this time, I am not in a position to service tech support requests except in
+the form of $100/hr commissions or offers of full-time employment.
