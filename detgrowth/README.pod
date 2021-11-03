@@ -1,4 +1,4 @@
-=head1 Deterministic Growths Patch for FE Fates (rev. 4)
+=head1 Deterministic Growths Patch for FE Fates (rev. 6)
 
 This patch removes randomness from player unit level-up stat changes.
 
@@ -30,9 +30,9 @@ report any discrepancies you find.
 
 =head2 Building
 
-The patch is provided pre-built for JPN and USA Special Editions. If you have
-another edition (or if you want to modify the patch in assembly), you'll need
-to build it from source, requiring:
+The patch is provided pre-built for JPN and USA Special Editions, and for USA
+Conquest. If you have another edition (or if you want to modify the patch in
+assembly), you'll need to build it from source, requiring:
 
 =over 2
 
