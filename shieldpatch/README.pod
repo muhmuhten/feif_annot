@@ -1,0 +1,8 @@
+=head1 Shield Flag Removal Patch for FE Fates
+
+This patch prevents application of the green shield icon flag on bonus units,
+which normally blocks supports and stuff.
+
+=head2 why this
+
+Someone wanted to do a hack with supports between captured units.

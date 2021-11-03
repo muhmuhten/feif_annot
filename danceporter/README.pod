@@ -1,0 +1,11 @@
+=head1 Dance Flag is Convoy Flag Patch for FE Fates
+
+This patch ties the Convoy command to the SPID that grants the Sing command.
+
+Note that only the Job SPID flags are checked for the Sing command, and only
+the Person SPID flags are checked for the Convoy command, so this reuse
+probably shouldn't cause any technical issues.
+
+=head2 why this
+
+protag azura rewrite let's gooo
