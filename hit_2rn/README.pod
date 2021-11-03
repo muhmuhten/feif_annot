@@ -1,0 +1,11 @@
+=head1 2RN Hit for FE Fates
+
+This patch replaces the
+L<actual hit calculation|https://www.reddit.com/r/fireemblem/comments/8nbg0c/fates_actual_hit_rate_percentage/>
+with a replica L<2RN hit system|https://serenesforest.net/general/true-hit/>.
+
+=head2 why this
+
+This exists mainly to make a point about how the new Fates hit calculation
+honestly doesn't matter very much, and complaints about it are mostly fueled by
+confirmation bias backed by sketchy play.
