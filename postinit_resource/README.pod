@@ -1,0 +1,4 @@
+=head1 Resource Initialization Patch for FE Fates
+
+This patch sets quantities of all food/gems the first time any food/gem is
+obtained. The amount is baked into the code because it's pretty tight.
