@@ -14,8 +14,8 @@
 	bl	_SYM_.Random__GetValue
 	add	r0,r0,r5
 	cmp	r4,r0,asr #1
-	movlt	r0,#0
-	movge	r0,#1
+	movle	r0,#0
+	movgt	r0,#1
 	ldmia	sp!,{r4-r6,pc}
 	.skip 84
 @@rng_state:
