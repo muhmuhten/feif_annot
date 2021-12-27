@@ -1,0 +1,9 @@
+=head1 1RN Hit for FE Fates
+
+This patch replaces the
+L<actual hit calculation|https://www.reddit.com/r/fireemblem/comments/8nbg0c/fates_actual_hit_rate_percentage/>
+with a 1RN hit system.
+
+=head2 why this
+
+It's not a lie,
