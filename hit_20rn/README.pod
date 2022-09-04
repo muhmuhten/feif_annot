@@ -7,3 +7,7 @@ with a 20RN hit system.
 =head2 why this
 
 Blame Zoran...
+
+=head2 Details
+
+L<"it's less extreme than you'd probably think"|https://anydice.com/program/2ae11>
