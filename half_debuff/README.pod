@@ -1,0 +1,4 @@
+=head1 Turnwise Half Debuff Recovery for FE Fates
+
+This patch changes the debuff recovery mechanic to halve the debuff each turn
+(rounded down).
