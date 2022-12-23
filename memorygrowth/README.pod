@@ -25,6 +25,10 @@ Unlike standard Fates, which rolls levels up to 4 times to avoid empty levels,
 this code has no such bad "luck" mitigation, which probably justifies rounding.
 Gunter levels are a bit worse, sure, but somehow I doubt that's a dealbreaker.
 
+Characters who rejoin with adjusted bases (e.g. Kaze and Gunter in Conquest)
+have their handicaps (and their level-up RNG seed!) reset when the rejoin, so
+unrealized pre-BoF growths won't be carried over.
+
 =head3 Why would you want this?
 
 If you read between the lines, this is what people call "average stats", which
