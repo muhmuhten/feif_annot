@@ -10,4 +10,4 @@ Blame Zoran...
 
 =head2 Details
 
-L<"it's less extreme than you'd probably think"|https://anydice.com/program/2ae11>
+L<"it's less extreme than you'd probably think" —Scepti|https://anydice.com/program/2ae11>

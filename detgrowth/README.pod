@@ -2,8 +2,11 @@
 
 This patch removes randomness from player unit level-up stat changes.
 
+B<Most people are probably going to be more interested in
+L<the other non-random almost-average growths patch|https://github.com/muhmuhten/feif_annot/tree/master/memorygrowth>>.
+
 The stats gained at each level are computed so that units' total gains in each
-stat differ from averages by less than one point.
+stat differ from averages by less than one point. See (immediately) below.
 
 =head2 Caveats and Technical Details
 

@@ -1,7 +1,8 @@
 =head1 0% Growths Patch for FE Fates
 
-This patch also removes randomness from player unit level-up stat changes, by
-removing level-up stat changes altogether.
+This patch removes randomness from player unit level-up stat changes.
+
+Stats are not gained at each level (unless they were guaranteed, anyway).
 
 =head2 Caveats and Technical Details
 
